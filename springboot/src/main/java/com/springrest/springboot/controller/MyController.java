@@ -2,8 +2,6 @@ package com.springrest.springboot.controller;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,11 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.springrest.springboot.entity.Course;
 import com.springrest.springboot.services.CourseServices;
 
-import io.swagger.annotations.ApiOperation;
-
 @RestController
 public class MyController {
-    Logger logger = LoggerFactory.getLogger(MyController.class);
 	
 	@Autowired
 	private CourseServices courseService;
@@ -61,7 +56,6 @@ public class MyController {
 	}
 	
 	@GetMapping("/coursesById/{courseId}")
-	@ApiOperation("Returns Course based in course id .")
 	public Course getById(@PathVariable long courseId) {
 		System.out.println("invoked");
 		return this.courseService.getById(courseId);
@@ -76,37 +70,5 @@ public class MyController {
     public List<Course> findByDescription(@RequestParam String description) {
         return courseService.getByDescription(description);
     }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-//	@GetMapping("/courseTD")
-//    public List<Course> findByTD(@RequestParam(name="title",required = false) String title, @RequestParam(name="description", required = false) String description) {
-//        return courseService.getByTD(title, description);
-//    }
-	
 
 }

@@ -2,8 +2,6 @@ package com.springrest.springboot.services;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -13,7 +11,6 @@ import com.springrest.springboot.entity.Course;
 
 @Service
 public class CourseServiceImpl implements CourseServices {
-    Logger logger = LoggerFactory.getLogger(CourseServiceImpl.class);
 	
 	@Autowired
 	private CourseDao courseDao;
@@ -67,28 +64,5 @@ public class CourseServiceImpl implements CourseServices {
 	public List<Course> getByDescription(String description) {
 		 return courseDao.findByDescription(description);
 	}
-
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-//	@Override
-//	public List<Course> getByTD(String title, String description) {
-//		return courseDao.findByTD(title, description);
-//	}
-
-	
-
 }

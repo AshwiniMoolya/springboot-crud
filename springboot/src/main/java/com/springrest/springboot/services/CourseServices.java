@@ -21,8 +21,4 @@ public interface CourseServices {
 
 	public List<Course> getByDescription(String description);
 
-//	public List<Course> getByTD(String title, String description);
-
-	
-
 }

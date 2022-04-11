@@ -15,9 +15,5 @@ public interface CourseDao extends JpaRepository<Course, Long>{
 	
 	@Query("SELECT c FROM Course c WHERE CONCAT(c.title, c.description) LIKE %?1%")
 	List<Course> findByDescription(String description);
-	
-//	@Query("SELECT c FROM Course c WHERE CONCAT(c.title, c.description) LIKE %?1%")
-//	List<Course> findByTD(String title, String description);
-
 }
 
